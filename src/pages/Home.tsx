@@ -43,9 +43,9 @@ export default function Home() {
             <div className="flex items-center justify-center">
               <div className="relative aspect-square w-full max-w-[400px] overflow-hidden rounded-full border-4 border-primary">
                 <img
-                  src="/images/chad_portrait_2.jpg?height=400&width=400"
+                  src="/images/chad_portrait_1.jpg"
                   alt="Developer portrait"
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-120"
                 />
               </div>
             </div>
