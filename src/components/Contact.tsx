@@ -1,9 +1,36 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
+import { sendMailProps } from "@/types";
 
 export default function Contact() {
-    // TODO: Implement submit functionality for form
+  const contactInputs = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
+  function handleChange(
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    contactInputs[name as keyof sendMailProps] = value;
+  }
+
+  async function onSubmit() {
+    // Use express api to send emails
+    const response = await fetch("/send");
+    const json = await response.json();
+
+    if (!json.success) {
+      console.error("Failed to send email");
+    }
+  }
+
   return (
     <>
       <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
@@ -53,7 +80,7 @@ export default function Contact() {
 
         <Card>
           <CardContent className="p-6">
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={onSubmit}>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <label
@@ -66,6 +93,7 @@ export default function Contact() {
                     id="name"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your name"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="space-y-2">
@@ -80,6 +108,7 @@ export default function Contact() {
                     type="email"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your email"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -94,6 +123,7 @@ export default function Contact() {
                   id="subject"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Subject"
+                  onChange={handleChange}
                 />
               </div>
               <div className="space-y-2">
@@ -107,6 +137,7 @@ export default function Contact() {
                   id="message"
                   className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Your message"
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <Button type="submit" className="w-full">

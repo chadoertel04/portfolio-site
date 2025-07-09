@@ -13,6 +13,17 @@ Author: Chad Oertel
 - `npm install`
 - `npm run dev`
 
+## Environment variables
+
+The following environment variables are required for enabling the email service:
+```
+VITE_MAIL_HOST=
+VITE_MAIL_USERNAME=
+VITE_MAIL_PASSWORD=
+VITE_TO_EMAIL=
+VITE_FROM_EMAIL
+```
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
