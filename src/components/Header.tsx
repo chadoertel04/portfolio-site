@@ -46,7 +46,7 @@ export default function Header() {
             </Button>
             <Button variant="outline" size="icon" asChild>
               <a
-                href="https://github.com"
+                href="https://github.com/chadoertel04"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -56,7 +56,7 @@ export default function Header() {
             </Button>
             <Button variant="outline" size="icon" asChild>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/chadoertel"
                 target="_blank"
                 rel="noopener noreferrer"
               >

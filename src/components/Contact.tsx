@@ -28,7 +28,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <Linkedin className="h-5 w-5 text-primary" />
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/chadoertel"
                   className="hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -39,7 +39,7 @@ export default function Contact() {
               <div className="flex items-center gap-3">
                 <Github className="h-5 w-5 text-primary" />
                 <a
-                  href="https://github.com"
+                  href="https://github.com/chadoertel04"
                   className="hover:underline"
                   target="_blank"
                   rel="noopener noreferrer"

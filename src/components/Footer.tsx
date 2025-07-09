@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
             <a
-              href="https://github.com"
+              href="https://github.com/chadoertel04"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -21,7 +21,7 @@ export default function Footer() {
           </Button>
           <Button variant="ghost" size="icon" asChild>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/chadoertel"
               target="_blank"
               rel="noopener noreferrer"
             >
