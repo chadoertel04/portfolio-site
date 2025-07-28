@@ -1,9 +1,38 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
+import { useState } from "react";
 
 export default function Contact() {
-    // TODO: Implement submit functionality for form
+    const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const { name, email, subject, message } = formData;
+
+    // *Note* Requires mailto to be setup correctly on user PC
+    const mailtoLink = `mailto:chad.oertel4@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+  };
+
   return (
     <>
       <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
@@ -53,7 +82,7 @@ export default function Contact() {
 
         <Card>
           <CardContent className="p-6">
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <label
@@ -64,8 +93,10 @@ export default function Contact() {
                   </label>
                   <input
                     id="name"
+                    name="name"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your name"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="space-y-2">
@@ -77,9 +108,11 @@ export default function Contact() {
                   </label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Your email"
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -92,8 +125,10 @@ export default function Contact() {
                 </label>
                 <input
                   id="subject"
+                  name="subject"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Subject"
+                  onChange={handleChange}
                 />
               </div>
               <div className="space-y-2">
@@ -105,8 +140,10 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                   placeholder="Your message"
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <Button type="submit" className="w-full">
