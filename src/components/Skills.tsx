@@ -21,35 +21,14 @@ export default function Skills() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span>React / Vite</span>
-                <span className="text-primary">95%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "95%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>TypeScript</span>
-                <span className="text-primary">90%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "90%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>Tailwind CSS</span>
-                <span className="text-primary">85%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "85%" }}
-                ></div>
               </div>
             </div>
           </CardContent>
@@ -62,35 +41,14 @@ export default function Skills() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span>Node.js / Express</span>
-                <span className="text-primary">85%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "85%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>MongoDB / PostgreSQL</span>
-                <span className="text-primary">80%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "80%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>GraphQL</span>
-                <span className="text-primary">75%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "75%" }}
-                ></div>
               </div>
             </div>
           </CardContent>
@@ -103,35 +61,14 @@ export default function Skills() {
             <div className="space-y-2">
               <div className="flex justify-between">
                 <span>Git / GitHub</span>
-                <span className="text-primary">90%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "90%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>Docker / CI/CD</span>
-                <span className="text-primary">80%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "80%" }}
-                ></div>
               </div>
 
               <div className="flex justify-between">
                 <span>UI/UX Design</span>
-                <span className="text-primary">70%</span>
-              </div>
-              <div className="h-2 w-full bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full"
-                  style={{ width: "70%" }}
-                ></div>
               </div>
             </div>
           </CardContent>
